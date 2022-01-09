@@ -1,6 +1,6 @@
 <?php
 
-namespace Niaz\Html;
+namespace App\Html;
 
 use ArrayObject;
 
@@ -14,11 +14,12 @@ class Table extends ArrayObject
         $this->offsetSet('attributes', new ArrayObject(array(),ArrayObject::ARRAY_AS_PROPS));
         $this->offsetSet('emptyCell', $empty);
 
-        // set table data
+        
         foreach ($collection as $row => $value) {
+            // persist table data
             $this->offsetGet('tableData')->append($value);
 
-            // get all available header and persist
+            // persist all available header
             foreach ($value as $header => $rowData) {
                  $this->getHeaders()->offsetExists($header) ?: $this->getHeaders()->offsetSet($header,$header);
             }

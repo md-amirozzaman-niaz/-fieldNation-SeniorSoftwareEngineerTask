@@ -1,6 +1,6 @@
 <?php
 
-require_once './src/table.php';
+require_once './src/App/Html/Table.php';
 
 $data = [
     [
@@ -33,7 +33,7 @@ echo '<link rel="stylesheet" href="/css/bootstrap.min.css" integrity="undefined"
 echo '<a href="/">Home</a>';
 
 echo "<h3>Datatable without styling and attribute</h3>";
-$htmlTable1 = new \Niaz\Html\Table($data, $attributes);
+$htmlTable1 = new \App\Html\Table($data, $attributes);
 $htmlTable1->displayAsTable();
 
 
@@ -76,5 +76,5 @@ $attributes = [
     'empty' => ['class' => 'empty-cell', 'style' => 'background:#e3e3e3;', 'data' => 'empty']
 ];
 
-$htmlTable2 = new \Niaz\Html\Table($data, $attributes,$emptyCell);
+$htmlTable2 = new \App\Html\Table($data, $attributes,$emptyCell);
 $htmlTable2->displayAsTable();
